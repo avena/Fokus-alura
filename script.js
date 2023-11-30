@@ -3,15 +3,21 @@ const focoBt = document.querySelector('.app__card-button--foco');
 const curtoBt = document.querySelector('.app__card-button--curto');
 const longoBt = document.querySelector('.app__card-button--longo');
 
+const banner = document.querySelector('.app__image');
+
+function alterarContexto( contexto) {
+  html.setAttribute('data-contexto', contexto);
+  banner.setAttribute('src', `/imagens/${contexto}.png`);
+}
 
 focoBt.addEventListener('click', ()=> {
-  html.setAttribute('data-contexto', 'foco');
-})
+  alterarContexto('foco');
+});
 
 curtoBt.addEventListener('click', ()=> {
-  html.setAttribute('data-contexto', 'descanso-curto');
-})
+  alterarContexto('descanso-curto');
+});
 
-
-longoBt.addEventListener('click', () => { html.setAttribute('data-contexto', 'descanso-longo');
-})
+longoBt.addEventListener('click', () => { 
+  alterarContexto('descanso-longo');
+});
